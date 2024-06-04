@@ -67,7 +67,7 @@ sudo apt install cmake make build-essential ripgrep fd-find fzf tar curl unzip
 
 ## Getting Started
 
-Clone this repository and place your `init.vim` or `init.lua` configuration files in the `~/.config/nvim` directory.
+Clone this repository and place these configuration files in the `~/.config/nvim` directory.
 
 ```bash
 git clone https://github.com/0xm4n/mini-nvim-config.git ~/.config/nvim
