@@ -70,7 +70,7 @@ sudo apt install cmake make build-essential ripgrep fd-find fzf tar curl unzip
 Clone this repository and place your `init.vim` or `init.lua` configuration files in the `~/.config/nvim` directory.
 
 ```bash
-git clone git@github.com:0xm4n/mini-nvim-config.git ~/.config/nvim
+git clone https://github.com/0xm4n/mini-nvim-config.git ~/.config/nvim
 ```
 
 
@@ -113,3 +113,39 @@ Example:
 ```bash
 bear make image.out -j12
 ```
+
+## Basic Neovim Usage
+
+This section explains the basic key mappings used in this Neovim configuration. These mappings are set up to enhance productivity by providing quick access to various functionalities.
+
+`<leader>` is space key.
+
+### Telescope Key Mappings
+
+- **Find Files**: Press `<leader>ff` to open Telescope and search for files in your project.
+
+- **Live Grep**: Press `<leader>fg` to perform a live grep search across your project.
+
+- **Grep String**: Press `,fg` to search for the string under the cursor.
+
+- **Buffers**: Press `<leader>fb` to list and switch between open buffers.
+
+- **Old Files**: Press `<leader>fp` to find recently opened files.
+
+- **Resume**: Press `<leader>fr` to resume the last Telescope search.
+
+- **Git Status**: Press `<leader>fs` to show the current Git status.
+
+
+
+### LSP Key Mappings
+- **Symbol References**: Press `gr` to find all references to the symbol under the cursor.
+
+- **Go to Declaration**: Press `gD` to go to the declaration of the symbol under the cursor.
+
+- **Go to Definition**: Press `gd` to go to the definition of the symbol under the cursor.
+
+- **Rename Symbol**: Press `<leader>rn` to rename the symbol under the cursor.
+
+
+- **Code Actio**n: Press `<leader>ca` to view and select code actions for the current line or selection.
