@@ -1,5 +1,11 @@
 return {
 	{
+		"j-hui/fidget.nvim",
+		tag = "legacy",
+		event = "LspAttach",
+		config = true
+	},
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
@@ -25,6 +31,13 @@ return {
 					'--malloc-trim',
 					'--header-insertion=never',
 				},
+				config = function ()
+					vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+						vim.lsp.diagnostic.on_publish_diagnostics, {
+							virtual_text = false
+						}
+					)
+				end,
 				on_attach = function(client, bufnr)
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to Declaration" })
 					vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to Definition" })

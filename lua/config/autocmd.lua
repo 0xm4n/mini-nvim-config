@@ -14,6 +14,12 @@ aug NoNameClose
 aug END
 ]]
 
+-- Auto close nvimtree
+vim.api.nvim_create_autocmd('BufEnter', {
+    command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+    nested = true,
+})
+
 -- Remove colorcolumn on quickfix window
 vim.cmd [[
 au FileType qf setlocal colorcolumn=
@@ -27,3 +33,9 @@ augroup qf
 augroup END
 ]]
 
+vim.lsp.set_log_level("off")
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+	vim.lsp.diagnostic.on_publish_diagnostics, {
+		virtual_text = false
+	}
+)

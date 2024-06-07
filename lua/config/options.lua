@@ -32,3 +32,6 @@ vim.opt.wildoptions = "pum"
 vim.opt.ruler = false
 vim.opt.undofile = true
 vim.g.c_syntax_for_h = 1
+vim.opt.shell = '/usr/bin/zsh'
+vim.opt.swapfile = false 		-- turn off swapfile
+

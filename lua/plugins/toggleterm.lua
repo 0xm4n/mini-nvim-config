@@ -21,7 +21,7 @@ return {
 				persist_size = true,
 				direction = "horizontal",
 				close_on_exit = true,
-				shell = vim.o.shell,
+				shell = '/usr/bin/zsh',
 			})
 
 			function _G.set_terminal_keymaps()

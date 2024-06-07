@@ -24,6 +24,12 @@ return {
 		lazy = true,
 	},
 	{
+		"folke/trouble.nvim",
+		event = "VeryLazy",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		config = true
+	},
+	{
 		"utilyre/barbecue.nvim",
 		version = "*",
 		dependencies = {
@@ -31,6 +37,13 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = true,
+	},
+	{
+		'goolord/alpha-nvim',
+		config = function ()
+			local dashboard = require("alpha.themes.startify")
+			require'alpha'.setup(dashboard.config)
+		end
 	},
 }
 

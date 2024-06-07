@@ -3,8 +3,12 @@ return {
 		"dstein64/vim-startuptime",
 		cmd = "StartupTime",
 		config = function()
-			vim.g.startuptime_tries = 10
+			vim.g.startuptime_tries = 8
 		end,
+	},
+	{
+		"tpope/vim-repeat",
+		event = "VeryLazy",
 	},
 	{
 		"tpope/vim-surround",
@@ -21,6 +25,9 @@ return {
 		let g:strip_whitelines_at_eof=0
 		]]
 		end
+	},
+	{
+		"0xm4n/resize.nvim",
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -48,6 +55,45 @@ return {
 				silent = true,
 				tmux_passthrough = true,
 			}
+			function copy()
+			  if vim.v.event.operator == 'y' then
+			    require('osc52').copy_visual()
+			  end
+			end
+			vim.api.nvim_create_autocmd('TextYankPost', {callback = copy})
+		end
+	},
+	{
+		"mbbill/undotree",
+		config = function ()
+			vim.cmd [[
+			if has("persistent_undo")
+			   let target_path = expand('~/.undodir')
+			    if !isdirectory(target_path)
+				call mkdir(target_path, "p", 0700)
+			    endif
+
+			    let &undodir=target_path
+			    set undofile
+			endif
+			]]
+		end
+	},
+	{
+		"RRethy/vim-illuminate",
+		event = { "BufReadPost", "BufNewFile" },
+	},
+	{
+		"phaazon/hop.nvim",
+		event = "VeryLazy",
+		config = true,
+	},
+	{
+		'ThePrimeagen/harpoon',
+		lazy = true,
+		event = "VeryLazy",
+		config = function()
+			require("telescope").load_extension "harpoon"
 		end
 	},
 	{
@@ -59,6 +105,11 @@ return {
 		"windwp/nvim-autopairs",
 		config = true,
 		event = "VeryLazy",
+	},
+	{
+		"gbprod/substitute.nvim",
+		event = "VeryLazy",
+		config = true
 	},
 	{
 		"kevinhwang91/nvim-bqf",
@@ -76,6 +127,5 @@ return {
 		"yssl/QFEnter",
 		event = "VeryLazy",
 	},
-
 }
 
