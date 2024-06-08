@@ -52,3 +52,6 @@ keymap('n', ',fh',':execute \'Telescope help_tags default_text=\' . expand(\'<cw
 vim.keymap.set('n', '<leader>y', function() require('osc52').copy_operator() end, {expr = true})
 vim.keymap.set('x', '<leader>y', function() require('osc52').copy_visual() end)
 
+-- Vista
+keymap("n", "<F8>", '<cmd>Vista!!<CR>', opts)
+
