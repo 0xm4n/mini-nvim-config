@@ -76,6 +76,8 @@ return {
 		"yssl/QFEnter",
 		event = "VeryLazy",
 	},
-
+	{
+		"liuchengxu/vista.vim",
+	},
 }
 
