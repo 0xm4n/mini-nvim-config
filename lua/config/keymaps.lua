@@ -50,6 +50,14 @@ keymap('n', '<leader>fs',  "<cmd>lua require('telescope.builtin').git_status()<c
 keymap('n', '<leader>fc',  "<cmd>lua require('telescope.builtin').git_commits()<cr>", opts)
 keymap('n', '<leader>gb',  "<cmd>lua require('telescope.builtin').git_branches()<cr>", opts)
 
+-- Telescope LSP
+keymap('n', '<leader>ls',  "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>", opts)
+keymap('n', '<leader>ld',  "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", {silent = true})
+keymap('n', '<leader>li',  "<cmd> Telescope lsp_implementation<CR>", {silent = true})
+keymap('n', '<leader>lr',  "<cmd> Telescope lsp_references<CR>", {silent = true})
+keymap('n', '<leader>lh',"<cmd>ClangdSwitchSourceHeader<CR>", opts)
+keymap('n', ',ls',':execute \'Telescope lsp_dynamic_workspace_symbols default_text=\' . expand(\'<cword>\')<CR>', opts)
+
 -- Harpoon
 keymap('n', '<leader>ha',  "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
 keymap('n', '<leader>hm',  "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
